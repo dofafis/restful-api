@@ -5,8 +5,14 @@ var DataBase = (function () {
         this.DB_URI = 'mongodb://127.0.0.1/ts-rest-api';
     }
     DataBase.prototype.createConnection = function () {
-        mongoose.connect(this.DB_URI);
-        this.logger(this.DB_URI);
+        if (process.env.NODE_ENV == 'production') {
+            mongoose.connect(process.env.MONGODB_URI);
+            this.logger(process.env.MONGODB_URI);
+        }
+        else {
+            mongoose.connect(this.DB_URI);
+            this.logger(this.DB_URI);
+        }
     };
     DataBase.prototype.closeConnection = function (message, callback) {
         this.DB_CONNECTION.close(function () {
