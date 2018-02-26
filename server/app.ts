@@ -42,7 +42,7 @@ class App {
     this.app.put('/api/v1/users/:id', UserRoutes.update);
     this.app.delete('/api/v1/users/:id', UserRoutes.delete);
 
-    this.app.get('/api/v1/categoria', CategoriaRoutes.getAll);
+    this.app.get('/api/v1/categorias', CategoriaRoutes.getAll);
     this.app.get('/api/v1/categorias/:id', CategoriaRoutes.getById);
     this.app.post('/api/v1/categorias', CategoriaRoutes.create);
     this.app.put('/api/v1/categorias/:id', CategoriaRoutes.update);
