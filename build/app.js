@@ -31,7 +31,7 @@ var App = (function () {
         this.app.post('/api/v1/users', routes_1.default.create);
         this.app.put('/api/v1/users/:id', routes_1.default.update);
         this.app.delete('/api/v1/users/:id', routes_1.default.delete);
-        this.app.get('/api/v1/categoria', routes_2.default.getAll);
+        this.app.get('/api/v1/categorias', routes_2.default.getAll);
         this.app.get('/api/v1/categorias/:id', routes_2.default.getById);
         this.app.post('/api/v1/categorias', routes_2.default.create);
         this.app.put('/api/v1/categorias/:id', routes_2.default.update);
