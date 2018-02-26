@@ -3,6 +3,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import DataBase from './config/db';
 import UserRoutes from './modules/user/routes';
+import CategoriaRoutes from './modules/categoria/routes';
 
 class App {
   public app: express.Application;

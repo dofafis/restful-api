@@ -4,6 +4,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var db_1 = require('./config/db');
 var routes_1 = require('./modules/user/routes');
+var routes_2 = require('./modules/categoria/routes');
 var App = (function () {
     function App() {
         this.app = express();
@@ -30,11 +31,11 @@ var App = (function () {
         this.app.post('/api/v1/users', routes_1.default.create);
         this.app.put('/api/v1/users/:id', routes_1.default.update);
         this.app.delete('/api/v1/users/:id', routes_1.default.delete);
-        this.app.get('/api/v1/categoria', CategoriaRoutes.getAll);
-        this.app.get('/api/v1/categorias/:id', CategoriaRoutes.getById);
-        this.app.post('/api/v1/categorias', CategoriaRoutes.create);
-        this.app.put('/api/v1/categorias/:id', CategoriaRoutes.update);
-        this.app.delete('/api/v1/categorias/:id', CategoriaRoutes.delete);
+        this.app.get('/api/v1/categoria', routes_2.default.getAll);
+        this.app.get('/api/v1/categorias/:id', routes_2.default.getById);
+        this.app.post('/api/v1/categorias', routes_2.default.create);
+        this.app.put('/api/v1/categorias/:id', routes_2.default.update);
+        this.app.delete('/api/v1/categorias/:id', routes_2.default.delete);
     };
     return App;
 }());
